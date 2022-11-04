@@ -26,9 +26,8 @@ const computerSelection = getComputerChoice();
 
 console.log(computerSelection);
 
-const playerSelection =  prompt();
+let playerSelection;
 
-console.log(playerSelection);
 
 let compare = computerSelection.localeCompare(playerSelection);
 
@@ -37,6 +36,7 @@ console.log(compare);
 
 function playRound(computerSelection,playerSelection){
 
+    playerSelection = prompt("Please enter your selection");
 
     if (compare != 0){
 
@@ -78,4 +78,48 @@ function playRound(computerSelection,playerSelection){
 
 console.log(playRound(computerSelection,playerSelection))
 
-function game()
+
+let contadorVictorias = 0;
+
+let contadorDerrotas = 0;
+
+function game(){ 
+
+
+    for (i = 0; i<5; i++){
+
+        let Decision = playRound(computerSelection,playerSelection);
+
+        if ( Decision === "You have lost!"){
+
+            
+            contadorDerrotas ++;
+
+        }else if ( Decision === "You´ve win!"){
+
+            contadorVictorias ++;
+
+        } else {
+
+            "Tie! Try again"
+        }
+
+        console.log(i);
+
+    }
+
+    if (contadorDerrotas > contadorVictorias){
+
+        return "You have finally lost";
+
+    }
+
+}
+
+game();
+
+console.log(contadorDerrotas);
+
+console.log(contadorVictorias);
+
+
