@@ -1,7 +1,13 @@
+let playerScore = 0;
+let computerScore = 0;
+let playedGames = 0;
+let tiedGames= 0;
+let playerSelection;
+let computerSelection;
 
 function getComputerChoice() {
 
-let randomNumber = Math.floor(Math.random() * (3 - 1 + 1) + 0);
+let randomNumber = Math.floor(Math.random() * 3);
 
   switch (randomNumber) {
     case 0:
@@ -19,14 +25,11 @@ let randomNumber = Math.floor(Math.random() * (3 - 1 + 1) + 0);
 }
 
 
-const playerSelection = "papper";
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-
+/*const computerSelection = getComputerChoice();*/
 
 function playRound(playerSelection, computerSelection) {
 
-    console.log(computerSelection);
+    /*console.log(computerSelection);*/
 
     switch (playerSelection){
 
@@ -64,11 +67,90 @@ function playRound(playerSelection, computerSelection) {
    
 }
    
- 
+
+  function game() {
+
+    for (i=0; i<5; i++){
+        
+        playerSelection = prompt("select your gun");
+        computerSelection = getComputerChoice();
+
+        let juego = playRound(playerSelection, computerSelection);
+        
+        if (juego == "You have lost!"){
+
+            computerScore++;
+            playedGames++;
 
 
-  console.log(playRound(playerSelection, computerSelection));
-  console.log(computerSelection);
+
+        } else if(juego == "You have win!"){
+            
+            playerScore++;
+            playedGames++;
+
+
+
+        }else if(juego == "Tie!"){
+           
+            playedGames++;
+            tiedGames++;
+
+        };
+
+    }
+}
+
+        /*switch (juego) {
+
+            case "You have lost!":
+            computerScore++;
+            playedGames++;
+            break;
+
+            case "You have win!":
+            playerScore++;
+            playedGames++;
+            break;
+                
+            case "Tie!":
+            playedGames++;
+            break;
+        }*/
+
+    console.log(game());
+    console.log(playerScore);
+    console.log(computerScore);
+    console.log(playedGames);
+    console.log(tiedGames);
+        
+        
+    
+        /*let partida = playRound(playerSelection, computerSelection);
+
+    if (partida == "You have win!"){
+
+        contadorVictorias++;
+
+        resultado = "El resultado del juego º {0} es ....You have win!", i+1 ;
+
+    } else if (partida == "You have lost!"){
+
+        contadorDerrotas++;
+        resultado = "El resultado del juego º {0} es ....You have lost!", i+1;
+
+
+    } else if (partida == "You have lost!")
+
+        resultado = "El resultado del juego º {0} es ....Tie!", i+1;
+
+    }*/
+    
+
+
+
+
+
 
 
 
