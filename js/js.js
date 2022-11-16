@@ -74,6 +74,8 @@ function playRound(playerSelection, computerSelection) {
         
         playerSelection = prompt("select your gun");
         computerSelection = getComputerChoice();
+        console.log(playerSelection);
+        console.log(computerSelection);
 
         let juego = playRound(playerSelection, computerSelection);
         
