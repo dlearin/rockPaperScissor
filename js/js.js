@@ -1,9 +1,40 @@
-let playerScore = 0;
+const btn = document.querySelector('#rock');
+const buttonRock = document.querySelector('#rock')
+let playerChoiceRock = 0;
+let playerChoiceScissor=0;
+let playerChoicePapper=0;
+
+btn.addEventListener('click', () => {
+  alert("Hello World");
+});
+
+buttonRock.addEventListener('click',() =>{
+    playerChoiceRock = 1;
+
+    console.log(playerChoiceRock);
+
+})
+
+
+/*buttons.forEach((button) => {
+
+    button.addEventListener(click, () => {
+        alert(button.id)
+    })
+});
+
+
+/*let playerScore = 0;
 let computerScore = 0;
 let playedGames = 0;
 let tiedGames= 0;
 let playerSelection;
 let computerSelection;
+const Btn = document.querySelectorAll('button');
+let intChoice = 0;*/
+
+
+/*
 
 function getComputerChoice() {
 
@@ -62,9 +93,34 @@ function playRound(playerSelection, computerSelection) {
     }
    
 }
+
+
+
+/*buttons.forEach(button => {button.addEventListener(click, ()=>{
+
+    playerChoice = button.id;
+    if (playerChoice == rock){
+        intChoice = 1;
+    }
+    else if(playerChoice == papper){
+        
+        intChoice = 2;
+
+    }else if(playerChoice == scissors){
+        intChoice = 3 ;
+
+    }
+
+    console.log(intChoice);
+
+
+})});*/
+
+
+
    
 
-  function game() {
+  /*function game() {
 
     for (i=0; i<5; i++){
         
@@ -97,13 +153,13 @@ function playRound(playerSelection, computerSelection) {
         };
 
     }
-}
+}*/
 
 
-    console.log(game());
+    /*console.log(game());
     console.log(playerScore);
     console.log(computerScore);
     console.log(playedGames);
-    console.log(tiedGames);
+    console.log(tiedGames);*/
         
     
