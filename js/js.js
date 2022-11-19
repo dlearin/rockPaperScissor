@@ -2,10 +2,13 @@
 
 const btn = document.querySelectorAll("button");
 let playedGames = 0;
+let winTimes = 0;
+let lostTimes = 0;
 let tiedGames= 0;
 let playerSelection;
 let computerSelection;
-const score = document.querySelector(".score");
+let juego;
+const scoreTitular = document.querySelector(".score");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
 const buttonSelected= document.querySelector(".btnSelection");
@@ -75,7 +78,6 @@ function getComputerChoice() {
     }
 
 
-
 //Function game
 
 
@@ -86,29 +88,58 @@ function game() {
         console.log(playerSelection);
         console.log(computerSelection);
 
-        let juego = playRound(playerSelection, computerSelection);
+        juego = playRound(playerSelection, computerSelection);
 
         console.log(juego);
+
+        const score = document.querySelector('#result');
+
+        const content = document.createElement('div');
+
+        content.classList.add('content');
+
+        content.textContent = juego;
         
-        /*if (juego == "You have lost!"){
+        container.appendChild(content);
 
-           alert();
+        //add counter to count played games
 
+        playedGames++;
 
+        console.log(playedGames);
 
-        } else if(juego == "You have win!"){
+        //add counter to count wins
+
+        if(juego == "You have win!"){
             
-            playerScore++;
-            playedGames++;
+            winTimes++;
 
 
+        }
 
-        }else if(juego == "Tie!"){
-           
-            playedGames++;
+        console.log(winTimes);
+
+
+       
+
+        //ad counter to count losts
+
+        if(juego == "You have lost!"){
+
+        lostTimes++;
+        }
+
+        console.log(lostTimes);
+
+        //add counter to tie times
+
+        if(juego == "Tie!"){
+
             tiedGames++;
-
-        };*/
+            console.log(tiedGames);
+        }
+        
+        console.log(tiedGames);
 
     
 }
@@ -124,6 +155,7 @@ btn.forEach((button) =>{
         
         playerSelection = button.id;
         game(); 
+
     
     
     })
