@@ -102,13 +102,21 @@ function game() {
         
         container.appendChild(content);
 
+
         //add counter to count played games
 
         playedGames++;
 
         console.log(playedGames);
 
-        //add counter to count wins
+        //add counter to count played games
+
+        score.textContent =  
+
+        //ad counter to count win times
+
+        
+
 
         if(juego == "You have win!"){
             
@@ -119,8 +127,6 @@ function game() {
 
         console.log(winTimes);
 
-
-       
 
         //ad counter to count losts
 
@@ -153,6 +159,8 @@ function game() {
 btn.forEach((button) =>{
     button.addEventListener("click", ()=>{
         
+
+
         playerSelection = button.id;
         game(); 
 
