@@ -92,15 +92,12 @@ function game() {
 
         console.log(juego);
 
-        const score = document.querySelector('#result');
+        //const content = document.createElement('div');
 
-        const content = document.createElement('div');
-
-        content.classList.add('content');
-
-        content.textContent = juego;
+        //content.classList.add('content');
+        //content.textContent = juego;
         
-        container.appendChild(content);
+        //container.appendChild(content);
 
 
         //add counter to count played games
@@ -111,11 +108,9 @@ function game() {
 
         //add counter to count played games
 
-        score.textContent =  
+       // score.textContent =  
 
         //ad counter to count win times
-
-        
 
 
         if(juego == "You have win!"){
@@ -147,10 +142,57 @@ function game() {
         
         console.log(tiedGames);
 
+        //add results in text
+
+        const score = document.querySelector('#result');
+
+        score.textContent = "";
+
+        score.textContent = juego;
+
+        //played times html
+
+        const playedHTML = document.querySelector('#playerScore');
+
+        playedHTML.textContent = "";
+
+        playedHTML.textContent = `This is your game number ${playedGames}`
+
+
+        
+        //add counter of winning times to text en html
+
+        const winHTML = document.querySelector("#winGames");
+
+        winHTML.textContent = "";
+
+        winHTML.textContent = `You have win ${winTimes} times`
+
+        //add counter of lost times to html
+
+        const lostHTML = document.querySelector('#lostGames');
+
+        lostHTML.textContent = "";
+
+        lostHTML.textContent = `You have lost ${lostTimes} times`;
+
+        //add counter of tied games to HTML
+
+        const tiedHTML = document.querySelector('#tiedGames');
+
+        tiedHTML.textContent = "";
+
+        tiedHTML.textContent = `You have tied ${tiedGames} times`
+
     
 }
 
+//Function to clean text after game
 
+function clearBox(elementID)
+{
+    document.getElementById(elementID).innerHTML = "";
+}
 
 //function addlistener to buttons
 
