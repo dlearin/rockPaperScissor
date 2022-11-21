@@ -92,13 +92,7 @@ function game() {
 
         console.log(juego);
 
-        //const content = document.createElement('div');
-
-        //content.classList.add('content');
-        //content.textContent = juego;
         
-        //container.appendChild(content);
-
 
         //add counter to count played games
 
@@ -199,15 +193,45 @@ function game() {
 
         tiedHTML.textContent = `You have tied ${tiedGames} times`
 
+        // limit of 5 played games
+
+        
+
+        if (playedGames >= 5){
+
+
+            const limitation = document.querySelector('#containerSections');
+
+            limitation.textContent = "";
+
+            const finishMessage = document.createElement('h1');
+
+            finishMessage.textContent = "Finish";
+
+            limitation.appendChild(finishMessage);
+
+            const showFinalResults = document.createElement('h2');
+
+            showFinalResults.textContent = `Your results are: \n 
+            You have won ${winTimes} times \n 
+            You have lost ${lostTimes} \n 
+            You have tied ${tiedGames} times`;
+
+            limitation.appendChild(showFinalResults);
+
+        }
+
     
 }
 
 //Function to clean text after game
 
-function clearBox(elementID)
-{
-    document.getElementById(elementID).innerHTML = "";
-}
+
+
+
+// first screen
+
+
 
 //function addlistener to buttons
 
