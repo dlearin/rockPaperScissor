@@ -1,0 +1,33 @@
+
+
+body {
+    background-image: url("../img/tv.jpg");
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.img {
+
+    margin-left: -450px;
+    margin-top: 350px;
+    border-color: black;
+    border-width: 400px 1.25em;
+    background-color: black;
+
+}
+
+div{
+
+    margin-right: 900px;
+    margin-top: 300px;
+    max-width: 400px;
+}
+
+
+
+

@@ -247,15 +247,6 @@ function Finished() {
 }
 
 
-
-   
-
-
-     
-
-
-
-
 //function addlistener to buttons
 
 
