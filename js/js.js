@@ -111,7 +111,6 @@ function game() {
             
             winTimes++;
 
-
         }
 
         console.log(winTimes);
@@ -193,43 +192,67 @@ function game() {
 
         tiedHTML.textContent = `You have tied ${tiedGames} times`
 
-        // limit of 5 played games
+        // limit of 5 played games and, then, clean it all and show results.
 
-        
-
-        if (playedGames >= 5){
-
-
-            const limitation = document.querySelector('#containerSections');
-
-            limitation.textContent = "";
-
-            const finishMessage = document.createElement('h1');
-
-            finishMessage.textContent = "Finish";
-
-            limitation.appendChild(finishMessage);
-
-            const showFinalResults = document.createElement('h2');
-
-            showFinalResults.textContent = `Your results are: \n 
-            You have won ${winTimes} times \n 
-            You have lost ${lostTimes} \n 
-            You have tied ${tiedGames} times`;
-
-            limitation.appendChild(showFinalResults);
-
-        }
+        Finished()
+        // show reset button
 
     
 }
 
-//Function to clean text after game
+//Function to clean all after game ended with 5 games played and show results
+
+
+function Finished() {
+    if (playedGames >= 5){
+
+
+        const limitation = document.querySelector('#containerSections');
+
+        limitation.textContent = "";
+
+        const finishMessage = document.createElement('h1');
+
+        finishMessage.textContent = "Finish";
+
+        limitation.appendChild(finishMessage);
+
+        const showFinalResults = document.createElement('h2');
+
+        showFinalResults.textContent = `Your results are: \n 
+        You have won ${winTimes} times \n 
+        You have lost ${lostTimes} \n 
+        You have tied ${tiedGames} times`;
+
+        limitation.appendChild(showFinalResults);
+
+        //Show reset button
+        
+        const reloadGame = document.createElement('button');
+
+        reloadGame.textContent = "Reset game";
+
+        reloadGame.onclick = ()=>{
+
+            window.location.reload()
+        }
+
+    
+        limitation.appendChild(reloadGame);
+
+       
+
+    }
+
+}
 
 
 
+   
 
-// first screen
+
+     
+
 
 
 
