@@ -150,6 +150,23 @@ function game() {
 
         score.textContent = juego;
 
+        //add computer decission to html
+
+        const userSelectionHTML = document.querySelector('#yourSelection');
+
+        userSelectionHTML.textContent = "";
+
+        userSelectionHTML.textContent = `You have selected ${playerSelection}`
+        
+
+        //add computer decission to html
+
+        const computerSelectionHTML = document.querySelector('#computerSelectionHTML');
+
+        computerSelectionHTML.textContent = "";
+
+        computerSelectionHTML.textContent = `The machine has selected ${computerSelection}`
+        
         //played times html
 
         const playedHTML = document.querySelector('#playerScore');
@@ -157,8 +174,6 @@ function game() {
         playedHTML.textContent = "";
 
         playedHTML.textContent = `This is your game number ${playedGames}`
-
-
         
         //add counter of winning times to text en html
 
