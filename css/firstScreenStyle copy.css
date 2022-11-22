@@ -1,0 +1,49 @@
+
+
+body {
+    background-image: url("../img/tv.jpg");
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.img {
+
+    margin-left: -480px;
+    margin-top: 210px;
+    border-color: black;
+    /*border-width: 400px 1.25em;*/
+    background-color: black;
+    border-style: solid;
+    border-color: #418209;
+    border-left: 90px;
+    border-right: 90px;
+    border-top: 120px;
+    border-bottom: 130px;
+    border-style: dotted;
+    border-radius: 20px;
+
+}
+
+.text {
+
+    background-color: grey;
+    
+    margin-right: 800px;
+    margin-top: 300px;
+    max-width: 400px;
+    font-size: 15px;
+}
+
+h1 {
+margin-right: -300px;
+
+}
+
+
+
+
