@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript" src="./js/js.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
-    <section id="containerSections">
-    <div id="container">
-        <button id="rock" class="btnSelection">Rock</button>
-        <button id="papper" class="btnSelection">Papper</button>
-        <button id="scissors" class="btnSelection">Scissor</button>
-    </div>
+    <section class="header">
+        Are you ready?
+    </section>
 
-    <div id="resultsTable">
-        <h1 id="result"></h1>
-        <h2 id="yourSelection"></h2>
-        <h2 id="computerSelectionHTML"></h2>
-        <p id="playerScore"></p>
-        <p id="winGames"></p>
-        <p id="lostGames"></p>
-        <p id="tiedGames"></p>
-    </div>
-</section>
-    
-    
+    <section id="containerSections">
+        
+        <div class="messageIntro distributionIntro">
+            <h1>Choose your weapon</h1>
+            <p>Remember, you only have 5 points to save humanity</p>
+        </div>
+
+        <div id="resultsTable" class="centered">
+            <h1 id="result"></h1>
+            <h2 id="yourSelection"></h2>
+            <h2 id="computerSelectionHTML"></h2>
+            <p id="playerScore"></p>
+            <p id="winGames"></p>
+            <p id="lostGames"></p>
+            <p id="tiedGames"></p>
+        </div>
+
+        <div id="container" class="centeredButton">
+            <button id="rock" class="btnSelection">Rock</button>
+            <button id="papper" class="btnSelection">Papper</button>
+            <button id="scissors" class="btnSelection">Scissor</button>
+        </div>
+    </section>
+
 </body>
+
 </html>
