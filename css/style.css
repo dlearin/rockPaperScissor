@@ -1,3 +1,7 @@
+
+@import url('https://fonts.cdnfonts.com/css/lvdc-game-over');  
+@import url('https://fonts.cdnfonts.com/css/game-over-dude');
+
 :root {
     --primary-light: #ddd;
     --primary-dark: #222831;
@@ -8,9 +12,32 @@
     --primary-yellow: #fac650;
 }
 
+body {
+    background-image: black;
+    font-family: 'LVDC Game Over 2', sans-serif;
+}
+
 *{
     padding: 0px;
     margin: 0px;
+}
+
+img{
+    height: 60px;
+    position: fixed;
+    top: 30%;
+    left: 105%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+#rock{
+    left: 90%;
+}
+
+p{
+    font-size: 8px;
+margin-top: 10px;
 }
 
 .header{
@@ -18,10 +45,20 @@
 }
 
 #containerSections{
-    background-color: var(--secondary-dark);
+
     height: 750px;
     display: flex;
 }
+
+#resultsTable{
+    font-size: 8px;
+    text-align:center;
+
+}
+#resultsTable h1{
+
+}
+
 
 .centered {
     position: fixed;
