@@ -1,3 +1,91 @@
+
+//Intro 
+//lo que hay que hacer es recoger el string como array para poder mostrar cada letra del array en orden en formato animacion
+function showMainText(){
+  
+  let elements = document.getElementsByClassName("containerSections");
+ 
+  for(i=0;i<elements.length;i++){
+     elements[i].style.display = "block";}
+    }
+
+/**
+ * @returns {Object}
+*/
+
+function defaultFadeConfig() {
+  return {      
+      easing: 'linear', 
+      iterations: 1, 
+      direction: 'normal', 
+      fill: 'forwards',
+      delay: 0,
+      endDelay: 0
+    }  
+}
+
+/** 
+ * @param {HTMLElement} el
+ * @param {number} durationInMs
+ * @param {Object} config
+ * @returns {Promise}
+ */
+
+async function fadeOut(el, durationInMs, config = defaultFadeConfig()) {  
+  return new Promise((resolve, reject) => {         
+    const animation = el.animate([
+      { opacity: '1' },
+      { opacity: '0', offset: 0.5 },
+      { opacity: '0', offset: 1 }
+    ], {duration: durationInMs, ...config});
+    animation.onfinish = () => resolve();
+  })
+}
+
+/** 
+ * @param {HTMLElement} el
+ * @param {number} durationInMs
+ * @param {Object} config
+ * @returns {Promise}
+ */
+
+let endAnimationFirst;
+
+function showMainText(){
+  
+        let elements = document.getElementsByClassName("containerSections");
+       
+        for(i=0;i<elements.length;i++){
+           elements[i].style.display = "block";}
+          }
+
+
+async function fadeIn(el, durationInMs, config = defaultFadeConfig()) {
+  return new Promise((resolve) => {         
+    const animation = el.animate([
+      { opacity: '0' },
+      { opacity: '0.5', offset: 0.5 },
+      { opacity: '1', offset: 1 }
+    ], {duration: durationInMs, ...config});
+    animation.onfinish = () => resolve();
+  });
+}
+
+window.addEventListener('load', async ()=> {
+  const el = document.getElementById('el1');  
+  for(const ipsum of "The humanity has fallen in an endless war... & We are loosing... & There is not hope and, sooner or later, we will lost... & But, when all seems lost .... & An ancient weapon seems working...& And its our last hope to survive...& Time to play rock, scissors, rock! & Choose your weapon".split('&')) {
+    await fadeOut(el, 1000);  
+    el.innerText = ipsum;
+    await fadeIn(el, 1000);
+  }
+
+
+});
+
+
+showMainText();
+
+
 // Initialing General variables
 
 const btn = document.querySelectorAll("button");
@@ -195,6 +283,7 @@ function game() {
         // limit of 5 played games and, then, clean it all and show results.
 
         Finished()
+
         // show reset button
 
     
@@ -202,49 +291,78 @@ function game() {
 
 //Function to clean all after game ended with 5 games played and show results
 
+function finishedText(param){
+  
 
-function Finished() {
-    if (playedGames >= 5){
+  const limitation = document.querySelector('#result');
+
+  limitation.textContent = param;
+
+  const yourSelection = document.querySelector("#yourSelection");
+
+  yourSelection.textContent = `Your results are: \n 
+  You have won ${winTimes} times \n 
+  You have lost ${lostTimes} \n 
+  You have tied ${tiedGames} times`;
+
+  const deleteItems = document.querySelector("#rest");
+
+  deleteItems.textContent = "";
+
+  const daButtons = document.querySelector("#Btn");
+
+  daButtons.textContent = "";
 
 
-        const limitation = document.querySelector('#containerSections');
+  /*
 
-        limitation.textContent = "";
+  const finishMessage = document.createElement('h1');
 
-        const finishMessage = document.createElement('h1');
+  finishMessage.textContent = param;
 
-        finishMessage.textContent = "Finish";
+  limitation.appendChild(finishMessage);
 
-        limitation.appendChild(finishMessage);
+  const showFinalResults = document.createElement('h2');
 
-        const showFinalResults = document.createElement('h2');
+  showFinalResults.textContent = `Your results are: \n 
+  You have won ${winTimes} times \n 
+  You have lost ${lostTimes} \n 
+  You have tied ${tiedGames} times`;
 
-        showFinalResults.textContent = `Your results are: \n 
-        You have won ${winTimes} times \n 
-        You have lost ${lostTimes} \n 
-        You have tied ${tiedGames} times`;
+  limitation.appendChild(showFinalResults);
+*/
+  //Show reset button
+  
+  const resetButton = document.querySelector("#container");
 
-        limitation.appendChild(showFinalResults);
+  const reloadGame = document.createElement('button');
 
-        //Show reset button
-        
-        const reloadGame = document.createElement('button');
+  reloadGame.textContent = "Reset game";
 
-        reloadGame.textContent = "Reset game";
+  reloadGame.onclick = ()=>{
 
-        reloadGame.onclick = ()=>{
+      window.location.reload()
+  }
 
-            window.location.reload()
-        }
 
-    
-        limitation.appendChild(reloadGame);
-
-       
-
-    }
+  resetButton.appendChild(reloadGame);
 
 }
+
+function Finished() {
+  if (winTimes == 5){
+
+    let win = "You have save the humanity!"
+
+    finishedText(win)
+
+  } else if (lostTimes == 5){
+    let lost = "You have lost, the end of humanity has began"
+    finishedText(lost)
+  }
+
+}
+
 
 
 //function addlistener to buttons
